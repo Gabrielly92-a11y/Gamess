@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.game-bord {
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #c1e1ee);
+}
+.pipe {
+    position: absolute;     
+    bottom: 0;
+    width: 80px;
+   animation: pipe-animation 1.5s infinite linear;
+}
+.mario {
+
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+.jump {
+    animation: jump 500ms ease-out;
+}
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.score-box {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #000;
+    border: 3px solid #fff;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+}
+
+.score-label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 2px; /*controla o espaçamento entre as letra*/
+}
+
+.score-value {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.instrucoes {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+
+
+@keyframes clouds-animation{
+    from {
+        right: -550px;
+    }
+     to {
+        right: 100%;
+     }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump{
+
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 180%
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
